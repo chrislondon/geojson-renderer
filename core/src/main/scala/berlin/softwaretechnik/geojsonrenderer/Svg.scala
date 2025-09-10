@@ -148,7 +148,7 @@ class JavaTileLoader extends TileLoader {
     val url = new URL(tile.url)
     val con = url.openConnection.asInstanceOf[HttpURLConnection]
     con.setRequestMethod("GET")
-    con.setRequestProperty("User-Agent", "curl/7.66.0")
+    con.setRequestProperty("User-Agent", "Workflow Manager/1.0 (workflowmanager.app)")
     val in = con.getInputStream
     val bytes =
       LazyList.continually(in.read).takeWhile(_ != -1).map(_.toByte).toArray
